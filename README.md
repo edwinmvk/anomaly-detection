@@ -25,16 +25,16 @@ Before you begin, ensure you have the following installed:
 
 ## Installation
 
-Clone the repository:
+Clone the repository and navigate to root directory:
 
 ```bash
 git clone https://github.com/edwinmvk/anomaly-detection.git
-cd financial-data-anomaly-detection
+cd anomaly-detection
 ```
 
 ### Backend Setup
 
-1. Navigate to the backend directory:
+1. Navigate to the backend directory from root:
 
    ```bash
    cd backend
@@ -47,7 +47,7 @@ cd financial-data-anomaly-detection
 
 ### Frontend Setup
 
-1. Navigate to the frontend directory:
+1. Navigate to the frontend directory from root:
 
    ```bash
    cd frontend
@@ -83,17 +83,19 @@ cd financial-data-anomaly-detection
 ## Project Structure
 
 ```
-financial-data-anomaly-detection/
+anomaly-detection/
 │
-├── server.py            # Flask backend
-├── requirements.txt     # Python dependencies
+├── backend/
+│   ├── server.py         # Flask backend
+│   └── requirements.txt  # Python dependencies
 │
 └── frontend/
-    ├── package.json     # npm dependencies and scripts
+    ├── package.json      # npm dependencies and scripts
     ├── public/
     └── src/
-        ├── App.js       # Main React component
-        └── ...          # Other React components and assets
+        ├── App.js        # Main React component
+        └── ...           # Other React components and assets
+
 ```
 
 ## Technologies Used
