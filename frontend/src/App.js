@@ -8,13 +8,26 @@ function App() {
 
   // Using useEffect for single rendering
   useEffect(() => {
-    // Using fetch to fetch the api from
-    fetch("/data").then((res) =>
-      res.json().then((data) => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch("/data");
+        const data = await res.json();
+        console.log(data);
         setDataStream(data.data_stream);
         setAnomalies(data.anomalies);
-      })
-    );
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    // Fetch data initially
+    fetchData();
+
+    // Set up interval to fetch data every 2 seconds
+    const intervalId = setInterval(fetchData, 2000);
+
+    // Cleanup function to clear the interval on unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
